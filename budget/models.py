@@ -33,4 +33,5 @@ class Transaction(models.Model):
     category = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.date} - {self.description}: {self.amount} (Account: {self.account.name})"
+        account_name = self.account.get('name', 'Unknown Account') if isinstance(self.account, dict) else str(self.account)
+        return f"{self.date} - {self.description}: {self.amount} (Account: {account_name})"

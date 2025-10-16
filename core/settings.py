@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "crispy_forms",
+    "crispy_bootstrap5",
     "budget",
+    "django_json_widget"
 ]
 
 MIDDLEWARE = [
@@ -56,7 +59,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [BASE_DIR / "templates"],
-        "APP_DIRS": False,
+        "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.request",
@@ -110,6 +113,9 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 # Static files (CSS, JavaScript, Images)
